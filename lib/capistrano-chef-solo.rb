@@ -1,1 +1,1 @@
-require "capistrano/chef-solo"
+require "capistrano/chef/solo"
