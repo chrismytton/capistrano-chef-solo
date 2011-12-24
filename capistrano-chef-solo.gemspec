@@ -3,8 +3,8 @@
 Gem::Specification.new do |gem|
   gem.authors       = ["Chris Mytton"]
   gem.email         = ["self@hecticjeff.net"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Capistrano tasks for chef-solo}
+  gem.summary       = %q{Bootstrap and run chef-solo remotely using Capistrano}
   gem.homepage      = ""
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
