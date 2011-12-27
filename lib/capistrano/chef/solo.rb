@@ -6,6 +6,7 @@ Capistrano::Configuration.instance.load do
     desc "Bootstrap a fresh server with chef"
     task :bootstrap do
       chef.ssh.transfer_keys
+      run "apt-get update"
       run "curl -fsSL opscode.com/chef/install.sh | bash"
       chef.default
     end
