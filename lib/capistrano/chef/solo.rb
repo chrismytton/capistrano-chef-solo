@@ -7,6 +7,7 @@ Capistrano::Configuration.instance.load do
     task :bootstrap do
       chef.ssh.transfer_keys
       run "apt-get update"
+      run "apt-get -y install curl"
       run "curl -fsSL opscode.com/chef/install.sh | bash"
       chef.default
     end
