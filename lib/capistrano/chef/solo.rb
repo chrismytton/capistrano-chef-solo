@@ -1,4 +1,4 @@
-Capistrano::Configuration.instance.load do
+Capistrano::Configuration.instance(:must_exist).load do
   set(:cookbook_path, 'chef/cookbooks') unless exists?(:cookbook_path)
   set(:node_json_path, 'chef/node.json') unless exists?(:node_json_path)
 
