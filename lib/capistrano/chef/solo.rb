@@ -18,11 +18,13 @@ Capistrano::Configuration.instance(:must_exist).load do
       run "#{sudo} chef-solo -j node.json -r chef-solo.tar.gz"
     end
 
+    desc "Upload the cookbooks tarball and node.json"
     task :setup do
       chef.cookbooks
       chef.node
     end
 
+    desc "Compress the cookbooks and upload them"
     task :cookbooks do
       system "tar -zcf chef-solo.tar.gz #{cookbook_path}"
       upload "chef-solo.tar.gz", "chef-solo.tar.gz"
